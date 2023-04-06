@@ -1,0 +1,205 @@
+<!--  Макет корректно работает для экранов от 1000px.
+      Протестировано в Хроме через F12 -> Toggle device bar (Ctrl+Shift+M).
+      Вёрстка «бетонная», все размеры заданы в px.
+-->
+
+<!doctype html>
+<html lang="ru-RU">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Подключил Bootstrap для быстрой вёрстки слайдера и модального окна.
+       В продакшн обычно кладу self-host версию, где выпилено всё ненужное -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  
+  <link rel="stylesheet" href="style.css">
+
+  <title>Тестовое задание</title>
+</head>
+<body class="body">
+
+
+
+  <header class="header">
+    <div class="header__content">
+      <div class="company">
+        <img class="company__logo" src="media/logo.png" alt="company Logo">
+        <h1 class="company__name">Название<br>компании</h1>
+        <p class="company__tagline">самая клёвая компания</p>
+      </div>
+      <div class="contacts">
+        <p class="contacts__phone-number">+7(499) 777-77-77<br>+7(499) 777-77-77</p>
+        <a class="contacts__callback" data-bs-toggle="modal" data-bs-target="#modal">Обратная связь</a>
+      </div>
+    </div>
+    <nav class="menu">
+      <ul class="menu__ul">
+        <li class="menu__li"><a class="menu__link" href="">Главная</a></li>
+        <li class="menu__li"><a class="menu__link" href="">Каталог</a></li>
+        <li class="menu__li"><a class="menu__link" href="">Доставка и оплата</a></li>
+        <li class="menu__li"><a class="menu__link" href="">Прайс-лист</a></li>
+        <li class="menu__li"><a class="menu__link" href="">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+
+
+  <!--  Бутстраповская карусель (слайдер)
+        https://getbootstrap.com/docs/5.2/components/carousel/#crossfade -->
+  <div class="carousel slide carousel-fade"  id="carousel" data-bs-ride="carousel" data-bs-interval="4000" data-bs-pause="false">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="media/1.jpg" alt="">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="media/2.jpg" alt="">
+      </div>
+    </div>
+    <div class="carousel-control-wrapper">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+
+
+  <nav class="breadcrumbs">
+    <a class="breadcrumbs__link" href="">Главная</a> / <a class="breadcrumbs__link" href="">Каталог</a> / Рольставни
+  </nav>
+  <main class="content">
+    <aside class="leftblock">
+      <nav class="categories">
+        <a class="categories__item" href="">Жалюзи</a>
+        <a class="categories__item" href="">Рольставни</a>
+        <ul class="categories__list">
+          <li class="categories__list-item">
+            <a class="categories__list-item-link" href="">Алюминиевые</a>
+          </li>
+          <li class="categories__list-item">
+            <a class="categories__list-item-link" href="">Прозрачные</a>
+          </li>
+          <li class="categories__list-item">
+            <a class="categories__list-item-link" href="">Металлические</a>
+          </li>
+          <li class="categories__list-item">
+            <a class="categories__list-item-link" href="">Решетчатые</a>
+          </li>
+        </ul>
+        <a class="categories__item" href="">Ворота</a>
+        <a class="categories__item" href="">Карнизы</a>
+        <a class="categories__item" href="">Москитные сетки</a>
+        <a class="categories__item" href="">Автоматика</a>
+      </nav>
+      <div class="price-list">
+        <img class="price-list__img" src="media/excel.jpg" alt="MS Excel">
+        <p class="price-list__text">Прайс-лист</p>
+      </div>
+    </aside>
+    <div class="centerblock">
+      <div class="product-cards">
+        <article class="product-card">
+          <img class="product-card__img" src="media/nophoto.jpg" alt="Рольставни 500мм х 500мм">
+          <h2 class="product-card__name">Рольставни 500мм х 500мм</h2>
+          <div class="product-card__price">5 900 p.</div>
+          <img class="product-card__add-to-cart add-to-card" src="media/addtobasket_mini.png" alt="Добавить в корзину">
+        </article>
+        <article class="product-card">
+          <img class="product-card__img" src="media/nophoto.jpg" alt="Рольставни 500мм х 500мм">
+          <h2 class="product-card__name">Рольставни 500мм х 500мм</h2>
+          <div class="product-card__price">5 900 p.</div>
+          <img class="product-card__add-to-cart add-to-card" src="media/addtobasket_mini.png" alt="Добавить в корзину">
+        </article>
+        <article class="product-card">
+          <img class="product-card__img" src="media/nophoto.jpg" alt="Рольставни 500мм х 500мм">
+          <h2 class="product-card__name">Рольставни 500мм х 500мм</h2>
+          <div class="product-card__price">5 900 p.</div>
+          <img class="product-card__add-to-cart add-to-card" src="media/addtobasket_mini.png" alt="Добавить в корзину">
+        </article>
+        <article class="product-card">
+          <img class="product-card__img" src="media/nophoto.jpg" alt="Рольставни 500мм х 500мм">
+          <h2 class="product-card__name">Рольставни 500мм х 500мм</h2>
+          <div class="product-card__price">5 900 p.</div>
+          <img class="product-card__add-to-cart add-to-card" src="media/addtobasket_mini.png" alt="Добавить в корзину">
+        </article>
+        <article class="product-card">
+          <img class="product-card__img" src="media/nophoto.jpg" alt="Рольставни 500мм х 500мм">
+          <h2 class="product-card__name">Рольставни 500мм х 500мм</h2>
+          <div class="product-card__price">5 900 p.</div>
+          <img class="product-card__add-to-cart add-to-card" src="media/addtobasket_mini.png" alt="Добавить в корзину">
+        </article>
+      </div>
+      <nav class="paginator">
+        <a class="paginator__link" href="">1</a>
+        <a class="paginator__link" href="">2</a>
+        <a class="paginator__link paginator__link_current" href="">3</a>
+        <a class="paginator__link" href="">4</a>
+        <a class="paginator__link" href="">5</a>
+        <a class="paginator__link" href="">6</a>
+        <a class="paginator__link" href="">7</a>
+      </nav>
+      <div class="about">
+        <p>Компания основана в 1998 году на фоне популярности солнцезащитных систем. Наша организация основывалась как производственно-торговая фирма, занимающаяся изготовлением продукции связанной с декорированием окон и защитой их от солнца. Постепенно с ростом и развитием производственных мощностей фирмы появились другие направления, которые охватывали уже не только интерьер помещения, но и наружные системы безопасности.</p>
+        <p>На сегодняшний день основными направлениями деятельности нашей компании является изготовление вертикальных жалюзи, рулонных штор, мультифактурных жалюзи, штор-плиссе, горизонтальных жалюзи, карнизов для штор, защитных роллет, москитных сеток, гаражных и промышленных ворот. С каждым годом наша команда профессионалов стремиться увеличить объёмы продаж путём конкурентной цены. Отдел продаж состоит из высококвалифицированных сотрудников с многолетним опытом работы. Весь персонал компании регулярно проходит дополнительное обучение для улучшения качества предоставления услуг.</p>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer__content">
+      <div class="footer__left">
+        © 2021–2022 ООО «Компания»<br>
+        info@name.ru
+      </div>
+      <nav class="footer__menu">
+        <a class="footer__link" href="">Главная</a>
+        <a class="footer__link" href="">Каталог</a>
+        <a class="footer__link" href="">Доставка и оплата</a>
+        <a class="footer__link" href="">Прайс-лист</a>
+        <a class="footer__link" href="">Контакты</a>
+      </nav>
+      <div class="footer__right">
+        <span style="text-decoration: underline">Тестовое задание</span> —<br>
+        компания «company»
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- Бутстраповское модальное окно -->
+  <div class="modal fade" id="modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-body">
+          <form class="form" action="/" method="post">
+            <h1 class="form__header">Обратная связь</h1>
+            <label class="form__label" for="form__name">Ваше имя *</label>
+            <input class="form__input" type="text" id="form__name" name="fname">
+            <label class="form__label" for="form__phone">Телефон *</label>
+            <input class="form__input" type="text" id="form__phone" name="fphone">
+            <label class="form__label" for="form__email">Email *</label>
+            <!-- Невалидное поле просто зафиксировал для скорости -->
+            <input class="form__input form__invalid" type="text" id="form__email" name="femail" placeholder="Поле обязательно для заполнения">
+            <label class="form__label" for="form__message">Сообщение</label>
+            <textarea class="form__input form__message" id="form__message" name="fmessage"></textarea>
+            <input class="form__submit" type="submit" value="Отправить">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+
+
+</body>
+</html>
